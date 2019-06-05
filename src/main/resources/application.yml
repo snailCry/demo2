@@ -1,0 +1,21 @@
+#配置api端口号
+server:
+  port: 8888
+  #context-path: /fitnes #更改此项注意静态html中的路径
+
+spring:
+  devtools: #热部署
+    restart:
+      enabled: true #热部署生效
+      additional-paths: src/main/java #设置重启的目录,添加那个目录的文件需要restart
+      exclude: static/**,public/**  #排除那个目录的文件不需要restart  (添加WEB-INF/**则classpath目录下的WEB-INF文件夹内容修改不重启)
+
+logging:
+  level:
+    com.qwwj.mapper: debug
+    root: info
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level%logger- %msg%n'
+    file: '%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n'
+
+
